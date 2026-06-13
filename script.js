@@ -17,5 +17,7 @@ const getHumanChoice = () => {
     return humanChoice;
 }
 
-
+// 3. Declare players score variables 
+const humanScore = 0;
+const computerScore = 0;
 
