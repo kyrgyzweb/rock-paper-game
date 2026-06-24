@@ -88,4 +88,20 @@ if (humanScore > computerScore) {
 
 }
 
-playGame();
+
+
+
+
+const btnOne = document.querySelector("#one");
+btnOne.addEventListener("click", playGame);
+
+const btnTwo = document.querySelector("#two");
+btnTwo.addEventListener("click", playGame);
+
+const btnThree = document.querySelector("#three");
+btnThree.addEventListener("click", playGame);
+
+const humanScore = document.querySelector(".humanScore");
+const computerScore = document.querySelector(".computerScore");
+const winner = document.querySelector(".winner");
+
