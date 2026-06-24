@@ -19,12 +19,14 @@ const getHumanChoice = () => {
 
 
 
-
-function playGame() {
-
-    // 3. Declare players score variables 
 let humanScore = 0;
 let computerScore = 0;
+
+
+
+
+    // 3. Declare players score variables 
+
 
 // 4. Write the logic to play a single round
 const playRound = (humanChoice, computerChoice) => {
@@ -68,10 +70,23 @@ const playRound = (humanChoice, computerChoice) => {
 console.log(`Human: ${humanScore}`);
 console.log(`Computer: ${computerScore}`);
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+const btnRock = document.querySelector("#rock");
+btnRock.addEventListener("click", () => {
+    playRound("rock", getComputerChoice());
+});
 
-playRound(humanSelection, computerSelection);
+const btnPaper = document.querySelector("#paper");
+btnPaper.addEventListener("click", () => {
+    playRound("paper", getComputerChoice());
+});
+
+const btnScissors = document.querySelector("#scissors");
+btnScissors.addEventListener("click", () => {
+    playRound("scissors", getComputerChoice());
+})
+
+
+const btnResult = document.querySelector("#result");
 
 
 console.log("=== Final Scores ===");
@@ -79,29 +94,17 @@ console.log(`Human: ${humanScore}`);
 console.log(`Computer: ${computerScore}`);
 
 if (humanScore > computerScore) {
-    console.log("You won the game!");
+    btnResult.textContent = "You won the game!";
 } else if (computerScore > humanScore) {
-    console.log("Computer won the game!");
+    btnResult.textContent = "Computer won the game!";
 } else {
-    console.log("The game ended in a tie!");
+    btnResult.textContent = "The game ended in a tie!";
 }
 
-}
+// Rock button choice
 
 
 
 
 
-const btnOne = document.querySelector("#one");
-btnOne.addEventListener("click", playGame);
-
-const btnTwo = document.querySelector("#two");
-btnTwo.addEventListener("click", playGame);
-
-const btnThree = document.querySelector("#three");
-btnThree.addEventListener("click", playGame);
-
-const humanScore = document.querySelector(".humanScore");
-const computerScore = document.querySelector(".computerScore");
-const winner = document.querySelector(".winner");
 
