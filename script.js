@@ -68,12 +68,11 @@ const playRound = (humanChoice, computerChoice) => {
 console.log(`Human: ${humanScore}`);
 console.log(`Computer: ${computerScore}`);
 
-for(let i = 0; i < 5; i++) {
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
-    playRound(humanSelection, computerSelection);
-}
+playRound(humanSelection, computerSelection);
+
 
 console.log("=== Final Scores ===");
 console.log(`Human: ${humanScore}`);
